@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import java.util.Set;
 
 @Data
 @Entity
@@ -23,9 +22,6 @@ public class User {
   @Size(min = 3, max = 50)
   @Column(unique = true)
   private String email;
-
-  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-  private Set<Task> tasks;
 
 }
 
