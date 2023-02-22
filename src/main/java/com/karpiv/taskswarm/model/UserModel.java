@@ -34,7 +34,6 @@ public class UserModel {
       User existingUser = user.get();
       existingUser.setName(updatedUser.getName());
       existingUser.setEmail(updatedUser.getEmail());
-      existingUser.setTasks(updatedUser.getTasks());
       return userRepository.save(existingUser);
     } else {
       throw new RuntimeException("Task not found with id: " + userId);

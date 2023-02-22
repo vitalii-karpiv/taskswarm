@@ -3,12 +3,15 @@ package com.karpiv.taskswarm.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import java.util.Set;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "USERS")
+@Table(name = "User")
 public class User {
 
   @Id
@@ -23,9 +26,6 @@ public class User {
   @Size(min = 3, max = 50)
   @Column(unique = true)
   private String email;
-
-  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-  private Set<Task> tasks;
 
 }
 
