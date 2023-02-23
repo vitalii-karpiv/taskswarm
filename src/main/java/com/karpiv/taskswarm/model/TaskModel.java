@@ -36,6 +36,7 @@ public class TaskModel {
       existingTask.setDescription(updatedTask.getDescription());
       existingTask.setDueDate(updatedTask.getDueDate());
       existingTask.setStatus(updatedTask.getStatus());
+      existingTask.setAssignee(updatedTask.getAssignee());
       return taskRepository.save(existingTask);
     } else {
       throw new RuntimeException("Task not found with id: " + taskId);
