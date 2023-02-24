@@ -1,4 +1,4 @@
-package com.karpiv.taskswarm.controllers;
+package com.karpiv.taskswarm.controller;
 
 import com.karpiv.taskswarm.domain.Task;
 import com.karpiv.taskswarm.model.TaskModel;

@@ -1,6 +1,7 @@
-package com.karpiv.taskswarm.controllers;
+package com.karpiv.taskswarm.controller;
 
 import com.karpiv.taskswarm.domain.User;
+import com.karpiv.taskswarm.exception.user.UserCreateException;
 import com.karpiv.taskswarm.model.UserModel;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,9 @@ public class UserController {
 
   @PostMapping
   public User createUser(@Valid @RequestBody User user) {
+    if (user.getName().length() == 4) { // TODO: tesing code, remove before pull request
+      throw new UserCreateException(UserCreateException.Error.INVALID_DTO_IN);
+    }
     return userModel.saveUser(user);
   }
 
